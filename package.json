@@ -1,0 +1,26 @@
+{
+    "name": "react-simple-dfp",
+    "version": "0.1.0",
+    "description": "A simple React component for DFP - DoubleClick for Publishers.",
+    "main": "lib/component.js",
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "keywords": [
+        "advertising",
+        "component",
+        "dfp",
+        "doubleclick",
+        "doubleclick for publishers",
+        "gpt",
+        "react"
+    ],
+    "author": "Amobiz",
+    "license": "MIT",
+    "dependencies": {
+        "react": "^15.3.0"
+    },
+    "devDependencies": {
+        "eslint": "^3.2.2"
+    }
+}

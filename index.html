@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<title>Infinite Scroll Example</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.js"></script>
+
+<script>
+// fake module manager
+function require(name) {
+  switch (name) {
+    case 'react': return window.React;
+    case './service': return window.dfp;
+  }
+}
+var module = { exports: {} };
+</script>
+
+<script src="lib/service.js"></script>
+<script src="lib/component.js"></script>
+
+<script>
+var AD_UNIT_PATH = '/6355419/Travel';
+var AD_SIZE = [728, 90];
+
+var fakeContent = (function () {
+  var _id = 0;
+
+  return function _fakeContent() {
+    var content = 'Dynamic Fake Content ' + (++_id);
+    el('H2').appendChild(document.createTextNode(content));
+  };
+})();
+
+function el(tag) {
+  var e = document.createElement(tag)
+  document.body.appendChild(e);
+  return e;
+}
+
+function more() {
+  ReactDOM.render(React.createElement(Dfp, {
+    adUnitPath: AD_UNIT_PATH,
+    adSize: AD_SIZE,
+    adTargeting: {
+      test: 'infinitescroll'
+    }
+  }), el('div'));
+
+  fakeContent();
+  fakeContent();
+}
+</script>
+
+<style>
+  body > div {
+    margin-bottom: 1em;
+    border: solid 1px black;
+    width: 728px
+  }
+
+  body > img {
+    margin-bottom: 1em;
+    display: block
+  }
+
+  body > button {
+    position: fixed;
+    bottom: 10px;
+  }
+</style>
+</head>
+
+<body>
+  <h1>GPT Test Page - Infinite Scroll</h1>
+
+  <text>
+    <h2> Initial Fake Content </h2>
+  </text>
+
+  <button onclick="more()">More Content</button>
+</body>
+
+</html>
