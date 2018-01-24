@@ -1,6 +1,6 @@
 {
     "name": "react-simple-dfp",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "A simple React component for DFP - DoubleClick for Publishers.",
     "main": "lib/component.js",
     "scripts": {
@@ -18,9 +18,13 @@
     "author": "Amobiz",
     "license": "MIT",
     "dependencies": {
-        "react": "^15.3.0"
+        "create-react-class": "^15.6.2",
+        "prop-types": "^15.6.0"
     },
     "devDependencies": {
         "eslint": "^3.2.2"
+    },
+    "peerDependencies": {
+        "react": ">= 15.3.0"
     }
 }
