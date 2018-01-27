@@ -16,6 +16,10 @@
         "react"
     ],
     "author": "Amobiz",
+    "contributors": [
+        "ALi Li (https://github.com/esbb48)",
+        "Ufuk BAYIR (https://github.com/ufukbay)"
+    ],
     "license": "MIT",
     "dependencies": {
         "create-react-class": "^15.6.2",
